@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{circuitikz} % Load circuit drawing package
+\ctikzset{resistor = european}
+
+\begin{document}
+\begin{circuitikz}
+
+    %Vizatimi i qarkut
+    \draw
+    (-3,4.5) to[R] (0,4.5)
+    (-3,3.5) to[R] (0,3.5)
+    (0,4.5) to[short] (0,3.5)
+    (0,3.5) to[R] (0,0)
+    (0,0) to[short] (-3,0)
+    (-3,0) to (-3,0) node[ground]{};
+
+    %Vizatimi i shigjetave
+    \draw [->] (0,3.5) to (2,3.5) to (2,2.5);
+    \draw [->] (0,0) to (2,0) to (2,1);
+
+    %vizatimi i pikave
+    \fill 
+    (-3,4.5) circle(2pt)
+    (-3,3.5) circle(2pt)
+    (-3,0) circle(2pt)
+    (0,3.5) circle(2pt)
+    (0,0) circle(2pt);
+
+    %Emertimet
+    \node at (-3.3,4.5) {\scriptsize $V_1$};
+    \node at (-3.3,3.5) {\scriptsize $V_2$};
+    \node at (-1.5,4.9) {\scriptsize $R_1$};
+    \node at (-1.5,3.1) {\scriptsize $R_2$};
+    \node at (0.5,1.75) {\scriptsize $R_3$};
+    \node at (2,1.75) {\scriptsize $V_d$};
+    
+\end{circuitikz}
+\end{document}
